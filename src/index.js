@@ -40,7 +40,7 @@ function inputSearchName(e) {
 function countryListMarkup(countries) {
     const markup = countries.map(country => 
         `<li class="wrupper">
-        <img class="img-place" src="${country.flags.svg}" alt="Flag of ${country.name.official}" width ="20" height="20">
+        <img class="img-place" src="${country.flags.svg}" alt="Flag of ${country.name.official}" width ="20">
         <p>${country.name.official}</p>
         </li>`).join('')
 countryList.innerHTML = markup;
@@ -49,7 +49,7 @@ countryList.innerHTML = markup;
 function countryInfoMarkup(countryData) {
     const markup = countryData.map(data =>
     `<div class="wrupper">
-        <div class="img-place"><img class="flag" src="${data.flags.svg}" alt="Flag of ${data.name.official}" max-width="20" ></div>
+        <img class="flag" src="${data.flags.svg}" alt="Flag of ${data.name.official}" width="50" >
         <h2 class="country-title-name">${data.name.official}</h2>
     </div>
     <ul class="list">
@@ -59,4 +59,8 @@ function countryInfoMarkup(countryData) {
     </ul>`).join('');
     countryInfo.innerHTML = markup;
 }
- 
+
+const body = document.querySelector('body');
+const title = document.createElement('h2');
+title.textContent = 'Введіть назву країни:';
+body.prepend(title);
