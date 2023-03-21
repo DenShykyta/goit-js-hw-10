@@ -40,7 +40,7 @@ function inputSearchName(e) {
 function countryListMarkup(countries) {
     const markup = countries.map(country => 
         `<li class="wrupper">
-        <img class="img-place" src="${country.flags.svg}" alt="Flag of ${country.name.official}" width ="20">
+        <img src="${country.flags.svg}" alt="Flag of ${country.name.official}" width ="20">
         <p>${country.name.official}</p>
         </li>`).join('')
 countryList.innerHTML = markup;
